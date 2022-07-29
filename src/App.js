@@ -6,7 +6,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Board />} />
-        <Route path="/posts/id" element={<Article />} />
+        <Route path="/posts/:id" element={<Article />} />
         <Route path="/comments" element={<Board />} />
       </Routes>
     </BrowserRouter>

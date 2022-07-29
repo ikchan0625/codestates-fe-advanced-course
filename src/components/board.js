@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Pagenation from "./pagenation";
 function Board() {
   const [articles, setArticles] = useState([]);
   const [viewArticle, setViewArticle] = useState([]);
-
+  const [page, setPage] = useState(1);
+  const limit = 10;
+  const offSet = (page - 1) * limit;
+  const navigation = useNavigate();
   const getArticles = async () => {
     try {
       const response = await axios.get(
@@ -21,29 +24,39 @@ function Board() {
       setArticles(data);
     });
   }, []);
-
+  const viewDetailHandler = (e) => {
+    const id = e;
+    navigation(`/posts/${id}`);
+  };
   return (
     <Container>
       <h1>참치의 게시판</h1>
 
-      {articles.slice(0).map((item) => {
+      {articles.slice(offSet, offSet + limit).map((item) => {
         return (
           <ArticleContainer key={item.id} item={item}>
-            <Link to="/posts/id">
-              <span
-                onClick={() => {
-                  setViewArticle(item.id);
-                  console.log(item.id);
-                }}
-              >
-                {item.title}{" "}
-              </span>
-            </Link>
+            {/* <Link to="/posts/id"> */}
+            <div
+              onClick={() => {
+                setViewArticle(item.id);
+                viewDetailHandler(item.id);
+              }}
+            >
+              {item.title}{" "}
+            </div>
+            {/* </Link> */}
             <span>작성자: {item.userId}</span>
           </ArticleContainer>
         );
       })}
-      <Pagenation></Pagenation>
+      <div>
+        <Pagenation
+          pageLength={articles.length}
+          limit={limit}
+          page={page}
+          setPage={setPage}
+        ></Pagenation>
+      </div>
     </Container>
   );
 }
