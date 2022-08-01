@@ -5,7 +5,7 @@ function Pagenation({ pageLength, limit, page, setPage }) {
 
   return (
     <>
-      <nav>
+      <Container>
         <Button onClick={() => setPage(page - 1)} disabled={page === 1}>
           &lt;
         </Button>
@@ -13,7 +13,12 @@ function Pagenation({ pageLength, limit, page, setPage }) {
         {Array(length)
           .fill()
           .map((_, i) => (
-            <Button key={i + 1} onClick={() => setPage(i + 1)}>
+            <Button
+              key={i + 1}
+              onClick={() => {
+                setPage(i + 1);
+              }}
+            >
               {i + 1}
             </Button>
           ))}
@@ -21,19 +26,28 @@ function Pagenation({ pageLength, limit, page, setPage }) {
         <Button onClick={() => setPage(page + 1)} disabled={page === length}>
           &gt;
         </Button>
-      </nav>
+      </Container>
     </>
   );
 }
 export default Pagenation;
-
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  aligin-items: center;
+  gap: 10px;
+  margin: 16px;
+`;
 const Button = styled.button`
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0;
+  background: black;
   color: white;
-  background: blue;
-  width: 60px;
-  height: 50px;
+  font-size: 1rem;
   &:hover {
-    background: red;
+    background: blue;
     cursor: pointer;
   }
 `;
