@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 function Article() {
   const [detail, getDetails] = useState([]);
@@ -37,7 +37,9 @@ function Article() {
   return (
     <Container>
       <Header>
-        <img alt="codestateslogo" src="/img/codestateslogo.png"></img>
+        <Link to="/">
+          <img alt="codestateslogo" src="/img/codestateslogo.png"></img>
+        </Link>
       </Header>
       <Articles>
         <TitleContainer>
@@ -49,14 +51,14 @@ function Article() {
 
       <CommentContainer>
         <CommentsHeader>
-          <span>달린 댓글 수: {reply.length} 개 </span>
+          <CommentsNum>달린 댓글 수: {reply.length} 개 </CommentsNum>
         </CommentsHeader>
 
         {reply.map((comment, id) => {
           return (
             <Comments key={comment.id}>
-              <CommentWriter>{comment.name} : </CommentWriter>
-              <ConmmentBody>{comment.body}</ConmmentBody>
+              <CommentWriter> {comment.name} : </CommentWriter>
+              <ConmmentBody> {comment.body}</ConmmentBody>
             </Comments>
           );
         })}
@@ -64,16 +66,17 @@ function Article() {
     </Container>
   );
 }
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 12px auto;
-  width: 75vw;
+  width: 60vw;
 
   box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
 `;
 const Header = styled.h3`
-  width: 75vw;
+  width: 60vw;
   text-align: center;
   border-bottom: solid grey;
 `;
@@ -89,7 +92,7 @@ const TitleContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  width: 75vw;
+  width: 60vw;
   border-bottom: solid grey 1px;
 `;
 const Title = styled.div`
@@ -102,25 +105,29 @@ const CommentContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-bottom: solid grey;
-  width: 75vw;
+  width: 60vw;
 `;
-const Comments = styled.div``;
+const Comments = styled.div`
+  margin: 10px;
+`;
+const CommentsNum = styled.div`
+  margin: 10px;
+`;
 const CommentsHeader = styled.div`
   text-align: right;
   font-size: 1.2rem;
-  width: 75vw;
+  width: 60vw;
   color: grey;
 `;
 const CommentWriter = styled.div`
   margin: 10px;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: grey;
-  height: 3vw;
+  height: 2vw;
 `;
 const ConmmentBody = styled.div`
   margin: 10px;
-  height: 10vw;
-  font-size: 20px;
+  font-size: 2rem;
   border-bottom: 2px solid grey;
 `;
 

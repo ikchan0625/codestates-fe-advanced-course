@@ -6,7 +6,6 @@ import Pagenation from "./pagenation";
 
 function Board() {
   const [articles, setArticles] = useState([]);
-  const [viewArticle, setViewArticle] = useState([]);
   const [page, setPage] = useState(1);
   const limit = 10;
   const offSet = (page - 1) * limit;
@@ -45,11 +44,10 @@ function Board() {
           <ArticleContainer key={item.id} item={item}>
             <Articles
               onClick={() => {
-                setViewArticle(item.id);
                 viewDetailHandler(item.id);
               }}
             >
-              {item.title}{" "}
+              <ArticleId>{item.id}</ArticleId> {item.title}{" "}
             </Articles>
             {/* </Link> */}
             <Writer>작성자: {item.userId}</Writer>
@@ -85,8 +83,13 @@ const ArticleContainer = styled.div`
   border-bottom: solid grey 1px;
 `;
 const Articles = styled.div`
+  padding: 10px;
   margin: 20px;
   font-size: 25px;
+`;
+const ArticleId = styled.span`
+  margin: 10px;
+  padding: 10px;
 `;
 const Writer = styled.span`
   margin: 20px;

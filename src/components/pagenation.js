@@ -15,9 +15,8 @@ function Pagenation({ pageLength, limit, page, setPage }) {
           .map((_, i) => (
             <Button
               key={i + 1}
-              onClick={() => {
-                setPage(i + 1);
-              }}
+              onClick={() => setPage(i + 1)}
+              cur={page === i + 1 ? "page" : null}
             >
               {i + 1}
             </Button>
@@ -37,6 +36,7 @@ const Container = styled.div`
   aligin-items: center;
   gap: 10px;
   margin: 16px;
+  padding: 30px;
 `;
 const Button = styled.button`
   border: none;
@@ -49,5 +49,18 @@ const Button = styled.button`
   &:hover {
     background: blue;
     cursor: pointer;
+  }
+  &[disabled] {
+    background: grey;
+    cursor: revert;
+    transform: revert;
+  }
+
+  &[cur] {
+    background: deeppink;
+    font-weight: bold;
+    color: red;
+    cursor: revert;
+    transform: revert;
   }
 `;
