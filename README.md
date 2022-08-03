@@ -19,28 +19,27 @@
 
 <h3>구현한 기능 목록 (Software Requirement Specification)</h3>
 
-* 게시판메인페이지
-  * 게시물리스트
-  * 하단페이지네이션(페이지번호로 이동, 이전 페이지 이동, 다음페이지 이동)
+* 게시판 메인 페이지
+  * 게시물 리스트
+  * 하단 페이지네이션(페이지번호로 이동, 이전 페이지 이동, 다음페이지 이동)
 * 게시물 상세 페이지
   * 게시물 상세정보
   * 게시물 댓글 보기
-* Item 1
-* Item 2
-  * Item 1
-  * Item 2
 
 
-  
-
+ 
   <br/>
   <br/>
 
   <br/>
  <br/>
 <h2>구현 방법 혹은 구현하면서 어려웠던 점</h3>
-<h4>동적 라우팅</h4>
-  ```react-router-dom``` 의 ```Routes```, ```Route```, ```Link```,```BrouserRouter``` 를 사용해 라우팅을 구현했습니다.<br/>
+* 동적 라우팅
+  * react-router-dom
+  ```
+  react-router-dom
+  ``` 
+  의 ```Routes```, ```Route```, ```Link```,```BrouserRouter``` 를 사용해 라우팅을 구현했습니다.<br/>
    App.js에서 ```'/posts/:id'``` path를 구분했습니다. 
 <h4>게시물 목록 페이지</h4>
   - ```axios```를 사용해서 API 를 호출하고, 해당 데이터의 userId, title 속성을 사용했습니다.  <br/>
