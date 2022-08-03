@@ -4,8 +4,8 @@
 <br/>
 
 <h3>프로젝트 실행 방법  </h3>
-1. <pre><code>cd src </code></pre> : termina에서 src 디렉토리로 진입 <br/>
-2. ```npm run start``` : 로컬 환경에서 실행 
+1. termina에서 src 디렉토리로 진입  <pre><code>cd src </code></pre> <br/>
+2. 로컬 환경에서 실행 <pre><code>npm run start </code></pre> 
 <br/>
 <br/>
 
