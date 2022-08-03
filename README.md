@@ -66,10 +66,13 @@
 
 
 <h2> 성능 최적화에 대한 고민  </h2>
+
 * 상세보기 페이지 댓글 성능 개선 
   * 처음에 구상했던 방법은 Api에 url = 'https://jsonplaceholder.typicode.com/comments' 로 요청을 보내고,
   * 전달 받은 데이터에서 postId 가 일치하는 댓글의 정보를 사용하는 방식을 생각했었다.
   * 하지만, comments 의 갯수가 증가 할 수록, 사용하는 자원의 크기가 클것이 분명한 방식이었기에 다른 방식을 생각해야했다.
+
+
 * useParams를 사용해, url 에서 key값을 추출 
   * useParams를 사용해, url 에서 key값을 추출하고,
   * API 에 key 값을 이용해서, 해당 게시글에 해당하는 댓글정보만을 얻었습니다. 
