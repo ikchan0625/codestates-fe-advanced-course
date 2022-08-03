@@ -4,11 +4,11 @@
 <br/>
 <h3>gif 파일 </h3>
 
-<div>페이지네이션</div>
+페이지네이션
 ![pagenation](https://user-images.githubusercontent.com/62270168/182530311-e45cac71-37dd-4d12-8e25-d628bc1650cf.gif)
 
-<div>상세페이지</div>
-![Uploading viewarticle.gif…]()
+상세페이지 
+![articles](https://user-images.githubusercontent.com/62270168/182531010-37c4a274-f5be-4a32-9956-72fe13693216.gif)
 
 <h3>프로젝트 실행 방법  </h3>
 1. termina에서 src 디렉토리로 진입  <pre><code>cd src </code></pre> <br/>
