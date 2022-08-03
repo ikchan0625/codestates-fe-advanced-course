@@ -10,9 +10,9 @@
 <br/>
 
 <h3>사용한 스택 목록 </h3>
-<ul>React: v18.2.0</ul>
-<ul>Styled-component: v5.3.5</ul>
-<ul>axios: v0.27.2</ul>
+*React: v18.2.0
+*Styled-component: v5.3.5
+*axios: v0.27.2
 <br/>
 <br/>
 
