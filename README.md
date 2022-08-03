@@ -4,7 +4,10 @@
 <br/>
 <h3>gif 파일 </h3>
 
+<div>페이지네이션</div>
 ![pagenation](https://user-images.githubusercontent.com/62270168/182529681-ef113993-c4ea-4f9f-aef1-3093c3da559e.gif)
+<div>상세페이지</div>
+![Uploading viewarticle.gif…]()
 <h3>프로젝트 실행 방법  </h3>
 1. termina에서 src 디렉토리로 진입  <pre><code>cd src </code></pre> <br/>
 2. 로컬 환경에서 실행 <pre><code>npm run start </code></pre> 
