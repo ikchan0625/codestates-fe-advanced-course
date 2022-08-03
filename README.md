@@ -34,15 +34,17 @@
   <br/>
  <br/>
 <h2>구현 방법 혹은 구현하면서 어려웠던 점</h3>
+
 * 동적 라우팅
-  * react-router-dom의 Routes, Route, Link, BrouserRouter 를 사용해 라우팅을 구현했습니다.
-  * App.js에서 '/posts/:id'로 path를 구분했습니다. 
-* 게시물 목록 페이지</h4>
+  * react-router-dom의 Routes, Route, Link, BrouserRouter 를 사용해 라우팅을 구현했습니다
+  * App.js에서 '/posts/:id'로 path를 구분했습니다
+* 게시물 목록 페이지
   * axios를 사용해서 API 를 호출하고, 해당 데이터의 userId, title 속성을 사용했습니다. 
-  * API를 통해 전달 받은 데이터를 10개씩 잘라내어, 페이지를 구분했습니다. 
+  * API를 통해 전달 받은 데이터를 10개씩 잘라내어, 페이지를 구분했습니다.
 * 게시물 상세 페이지
   * useParams를 사용해서, url에서 key값을 추출했습니다. 
   * 이후, key 값을 이용해서 , API 요청을 보내 게시글에 해당하는 댓글 데이터를 얻었습니다.
+
 
  
  <br/>
